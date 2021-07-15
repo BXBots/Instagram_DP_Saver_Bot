@@ -58,7 +58,7 @@ def username(update, context):
     chat_id = update.message.chat_id
     try:
         user = Profile.from_username(L.context, query)
-        caption_msg = f'''🚦*Name*: {user.full_name} \n🌟*Followers*🌟: {user.followers} \n🤩*Following*🤩: {user.followees}\
+        caption_msg = f'''🚦*Name*: {user.full_name} \n😜*Followers*: {user.followers} \n*⚜️Following*: {user.followees}\
          \n🔍*Account Type*🔍: {acc_type(user.is_private)} \n\n👲 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : [ʙx ʙᴏᴛᴢ](https://t.me/BX_Botz)'''
         context.bot.send_photo(
             chat_id=chat_id, photo=user.profile_pic_url,
