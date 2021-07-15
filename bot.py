@@ -12,9 +12,9 @@ TOKEN = os.getenv("BOT_TOKEN")
 APP_NAME = os.getenv("APP_NAME")
 TELEGRAM_USERNAME = os.getenv("TELEGRAM_USERNAME")
 
-welcome_msg = '''<b>Welcome To the Bot</b>🖐🖐
- <i>Send me anyones instagram username to get their DP</i>
- ex : <b>virat.kohli</b> , <b>thenameisyash</b> etc'''
+welcome_msg = '''Hai,
+
+'''
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -24,9 +24,9 @@ logger = logging.getLogger(__name__)
 
 def acc_type(val):
     if(val):
-        return "🔒Private🔒"
+        return "🔒Private"
     else:
-        return "🔓Public🔓"
+        return "🔓Public"
 
 # Start the Bot
 
@@ -58,8 +58,8 @@ def username(update, context):
     chat_id = update.message.chat_id
     try:
         user = Profile.from_username(L.context, query)
-        caption_msg = f'''🚦*Name*: {user.full_name} \n😜*Followers*: {user.followers} \n*⚜️Following*: {user.followees}\
-         \n🔍*Account Type*🔍: {acc_type(user.is_private)} \n\n👲 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : [ʙx ʙᴏᴛᴢ](https://t.me/BX_Botz)'''
+        caption_msg = f'''🚦Name: {user.full_name} \n😜Followers: {user.followers} \n⚜️Following: {user.followees}\
+         \nAccount Type: {acc_type(user.is_private)} \n\n👲 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : [ʙx ʙᴏᴛᴢ](https://t.me/BX_Botz)'''
         context.bot.send_photo(
             chat_id=chat_id, photo=user.profile_pic_url,
             caption=caption_msg, parse_mode='MARKDOWN')
