@@ -14,6 +14,9 @@ TELEGRAM_USERNAME = os.getenv("TELEGRAM_USERNAME")
 
 welcome_msg = '''Hai,
 
+`Iam a simple Instagram dp saver bot. send any Instagram username I will give details`.
+
+👲 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : [ʙx ʙᴏᴛᴢ](https://t.me/BX_Botz)
 '''
 
 logging.basicConfig(
